@@ -1,0 +1,143 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial</title>
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+ 
+    </head>
+<body>
+    <div class="container">
+        <div class="contents-wraper">
+            <section class="headers">
+                <h1>Testimonial</h1>
+            </section>
+            <section class="testRow">
+                <div class="testItem active">
+                    <img src="images/Capture1.PNG">
+                    <h3>Abdullahi Bello</h3>
+                    <h4>Customer, Kano</h4>
+                    <P>Ensik Global has been a great partner in my distributorship business. She has helped my business through 
+                        credit sales and several awards for my loyalty </P>
+                        
+                </div>
+
+                <div class="testItem">
+                    <img src="images/Capture2.PNG">
+                    <h3>Saheed Shittu</h3>
+                    <h4>Banker</h4>
+                    <P>Ensik Global has been a great partner in my distributorship business. She has helped my business through 
+                        credit sales and several awards for my loyalty </P>
+                     
+                </div>
+
+                <div class="testItem">
+                    <img src="images/Capture3.PNG">
+                    <h3>Emma</h3>
+                    <h4>Banker</h4>
+                    <P>Ensik Global has been a great partner in my distributorship business. She has helped my business through 
+                        credit sales and several awards for my loyalty </P>
+                </div>
+
+                <div class="testItem">
+                    <img src="images/capture4.PNG">
+                    <h3>Abdullahi Adamu</h3>
+                    <h4>Banker</h4>
+                    <P>Ensik Global has been a great partner in my distributorship business. She has helped my business through 
+                        credit sales and several awards for my loyalty </P>
+                    
+                </div>
+
+                <div class="testItem">
+                    <img src="images/Capture5.PNG">
+                    <h3>Alh Isiaka</h3>
+                    <h4>Banker</h4>
+                    <P>Ensik Global has been a great partner in my distributorship business. She has helped my business through 
+                        credit sales and several awards for my loyalty </P>
+                     
+                </div>
+
+
+            </section>
+            <section class="indicators">
+                <div class="dot active" attr="0" onclick="switchTest(this)"></div>
+                <div class="dot" attr="1" onclick="switchTest(this)"></div>
+                <div class="dot" attr="2" onclick="switchTest(this)"></div>
+                <div class="dot" attr="3" onclick="switchTest(this)"></div>
+                <div class="dot" attr="4" onclick="switchTest(this)"></div>
+
+
+            </section>
+        </div>
+        
+    </div>
+    <script type="text/javascript">
+	
+        // Access the testimonials
+        let testSlide = document.querySelectorAll('.testItem');
+        // Access the indicators
+        let dots = document.querySelectorAll('.dot');
+    
+        var counter = 0;
+    
+        // Add click event to the indicators
+        function switchTest(currentTest){
+            currentTest.classList.add('active');
+            var testId = currentTest.getAttribute('attr');
+            if(testId > counter){
+                testSlide[counter].style.animation = 'next1 0.5s ease-in forwards';
+                counter = testId;
+                testSlide[counter].style.animation = 'next2 0.5s ease-in forwards';
+            }
+            else if(testId == counter){return;}
+            else{
+                testSlide[counter].style.animation = 'prev1 0.5s ease-in forwards';
+                counter = testId;
+                testSlide[counter].style.animation = 'prev2 0.5s ease-in forwards';
+            }
+            indicators();
+        }
+    
+        // Add and remove active class from the indicators
+        function indicators(){
+            for(i = 0; i < dots.length; i++){
+                dots[i].className = dots[i].className.replace(' active', '');
+            }
+            dots[counter].className += ' active';
+        }
+    
+        // Code for auto sliding
+        function slideNext(){
+            testSlide[counter].style.animation = 'next1 0.5s ease-in forwards';
+            if(counter >= testSlide.length - 1){
+                counter = 0;
+            }
+            else{
+                counter++;
+            }
+            testSlide[counter].style.animation = 'next2 0.5s ease-in forwards';
+            indicators();
+        }
+        function autoSliding(){
+            deleteInterval = setInterval(timer, 2000);
+            function timer(){
+                slideNext();
+                indicators();
+            }
+        }
+        autoSliding();
+    
+        // Stop auto sliding when mouse is over the indicators
+        const container = document.querySelector('.indicators');
+        container.addEventListener('mouseover', pause);
+        function pause(){
+            clearInterval(deleteInterval);
+        }
+    
+        // Resume sliding when mouse is out of the indicators
+        container.addEventListener('mouseout', autoSliding);
+    
+    </script>
+</body>
+</html>

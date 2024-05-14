@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ensik Global Ventures </title>
+    <link rel="stylesheet"  href= "style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,600;1,200;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+           <div id="logo-line">
+             <a href="index.html"><img src="images/llo.jpg"></a>
+            </div>
+            <div class="nav-links" id ="navLinks">
+                <i class="fa fa-times-circle" onclick="hideMenu()"></i>
+                
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="products.html">OUR PRODUCTS</a></li>
+                    <li><a href="services.html">OUR SERVICES</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                    <li><a href="About.html">ABOUT US</a></li>
+                </ul>
+
+            </div>
+            <i class="fa fa-bars"onclick="showMenu()" ></i>
+        </nav>
+        <h1>CONTACT US</h1>
+        <a href="https://api.whatsapp.com/send?phone=2348160533966&text=Hello%2C%20I'm%20contacting%20you%20from%20your%20website" class="hero-btn green-btn">CHAT WITH US</a>
+
+    </section>
+
+    <section class="location">
+    <div class="row">
+        <div class="location-col">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.193189235725!2d8.538564799999998!3d12.030217199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x11ae812d7ac13383%3A0x7a5d8808260863e6!2s3%20Airport%20Rd%2C%20Sabon%20Gari%2C%20Kano%20700211%2C%20Kano!5e0!3m2!1sen!2sng!4v1705844224014!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <h3>Airport Road Office</h3>
+            <p>Address: No 3 Airport Road Kano</p>
+            <p>Phone Number: +234 818 876 3193</p>
+        </div>
+        <div class="location-col">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15610.157195012802!2d8.517119147195123!3d12.006347184214777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x11ae80eff0fff3f1%3A0xb159494257754a55!2sAccess%20Bank%20-%20Bello%20Road%20Branch%20Kano!5e0!3m2!1sen!2sng!4v1705853955025!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <h3>Bello Road Office</h3>
+                <p>Address: No 5 Yolawa street Bello Road Kano</p>
+                <p>Phone Number: +234 818 876 3193</p>
+            </div>
+    </div>
+    </section>
+
+
+<section class="footer">
+<h4>About Us</h4>
+<p>At Ensik Global our operation cut across distributorship of Nigerian Breweries Product across the Northern, Eastern part of Nigeria.<br> 
+    We also provide logistic services for movement of goods within and across states in Nigeria through our fleet </p>
+    <div class="icons">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+    </div>
+    <span id="copyright">
+        &copy; <script>document.write(new Date().getFullYear())</script> Ensik Global. All rights reserved.
+      </span>
+</section>
+
+<!------------- javascript for menu toggle--->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+
+            navLinks.style.right = "-200px";
+        }
+
+    </script>
+
+<script>
+    var year = new Date().getFullYear();
+    document.getElementById("copyright").innerHTML = "&copy; " + year + " Ensik Global. All rights reserved.";
+  </script>
+
+</body>
+
+
+</html>
